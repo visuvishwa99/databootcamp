@@ -36,12 +36,12 @@ SELECT
     ELSE y.films || t.films
   END                                 AS films,
 
-  CASE
+  (CASE
     WHEN COALESCE(t.avg_rating, 0) > 8 THEN 'star'
     WHEN COALESCE(t.avg_rating, 0) > 7 THEN 'good'
     WHEN COALESCE(t.avg_rating, 0) > 6 THEN 'average'
     ELSE 'bad'
-  END                                 AS quality_class,
+    END )::quality_class AS quality_class,
 
   (t.actorid IS NOT NULL)            AS is_active,
 
