@@ -1,3 +1,9 @@
+"""
+DDL for actors table: Create a DDL for an actors table with the following fields:
+
+"""
+
+
 drop type films cascade;
 
 CREATE  TYPE films AS (
@@ -17,3 +23,16 @@ CREATE  TABLE actors (
   current_year INT,
     PRIMARY key (actorid,current_year)
 );
+
+-- TRUNCATE table actors;
+
+-- select * from actors;
+
+--validation query 
+-- select count(1),actorid,current_year from actors
+-- GROUP BY actorid,current_year
+-- having count(1)> 1
+
+-- select * from actors_history_scd where actor_id='nm0000001';
+
+-- select *  from actors_history_scd;
