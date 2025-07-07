@@ -1,7 +1,6 @@
-
-"""
-Incremental query for actors_history_scd: Write an "incremental" query that combines the previous year's SCD data with new incoming data from the actors table.
-"""
+/*
+Incremental query for actors_history_scd: Write an incremental query that combines the previous years SCD data with new incoming data from the actors table.
+*/
 
 -- drop TYPE scd_type CASCADE;
 -- create type scd_type as (
@@ -22,8 +21,8 @@ with last_year_scd as (
         end_date,
         current_year
     from actors_history_scd
-    where current_year = 2021
-    and end_date = 2021
+    where current_year = 2020
+    and end_date = 2020
 
 ),
 
@@ -114,6 +113,6 @@ ty.current_year as end_date
  from this_year ty left join last_year_scd ly on (ty.actor_id = ly.actor_id) where ty.actor_id is null)
 select * from historical_scd
 union ALL
-select * from unnested_changed_records
+select * from unchanges_records
 union ALL
-select * from new_records;
+select * from unnested_changed_records;

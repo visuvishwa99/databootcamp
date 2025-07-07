@@ -1,7 +1,6 @@
-"""
+/*
 DDL for actors table: Create a DDL for an actors table with the following fields:
-
-"""
+*/
 
 
 drop type films cascade;
@@ -35,4 +34,4 @@ CREATE  TABLE actors (
 
 -- select * from actors_history_scd where actor_id='nm0000001';
 
--- select *  from actors_history_scd;
+-- select max(current_year),min(current_year)  from actors;

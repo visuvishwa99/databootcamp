@@ -1,8 +1,8 @@
-"""
 
-Cumulative table generation query: Write a query that populates the actors table one year at a time.
 
-"""
+/*
+2.Cumulative table generation query: Write a query that populates the actors table one year at a time.
+*/
 
 WITH yesterday AS (
   SELECT *
