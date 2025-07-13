@@ -15,7 +15,7 @@ select
     user_id,
     device_activity_datelist,
     current_user_date
-from user_devices_cumulated where current_user_date = DATE('2023-01-04' )
+from user_devices_cumulated where current_user_date = DATE('2023-01-30' )
 
 )
 
@@ -24,7 +24,7 @@ from user_devices_cumulated where current_user_date = DATE('2023-01-04' )
 select 
 user_id::TEXT,
 DATE(cast(event_time as TIMESTAMP)) as date_active
-from events where DATE(cast(event_time as TIMESTAMP)) = DATE('2023-01-05') 
+from events where DATE(cast(event_time as TIMESTAMP)) = DATE('2023-01-31') 
 and user_id is not null --filter input data 
 GROUP BY user_id, DATE(cast(event_time as TIMESTAMP))
 

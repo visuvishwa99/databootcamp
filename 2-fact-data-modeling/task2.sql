@@ -6,7 +6,7 @@ data type here should look similar to MAP<STRING, ARRAY[DATE]>
 or you could have browser_type as a column with multiple rows for each user (either way works, just be consistent!)
 */
 
-drop table user_devices_cumulated;
+-- drop table user_devices_cumulated;
 CREATE TABLE user_devices_cumulated (
     user_id TEXT,
     --browser_type TEXT, -- e.g., 'Chrome', 'Firefox', etc.  
@@ -18,4 +18,5 @@ CREATE TABLE user_devices_cumulated (
 
 
 
-select * from user_devices_cumulated where current_user_date = date('2023-01-05')
+select * from user_devices_cumulated where current_user_date = date('2023-01-31')
+and user_id='14434123505499000000'
