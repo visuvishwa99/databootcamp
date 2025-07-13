@@ -17,4 +17,5 @@ CREATE TABLE user_devices_cumulated (
 
 
 
--- select count(1) from user_devices_cumulated;
+
+select * from user_devices_cumulated where current_user_date = date('2023-01-05')
