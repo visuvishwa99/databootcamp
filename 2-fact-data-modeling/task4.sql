@@ -1,0 +1,6 @@
+-- SELECT
+--       user_id::NUMERIC                           AS user_id,
+--       event_time,
+--       MAX(TO_DATE(event_time,'YYYY-MM-DD'))      AS ref_date
+--     FROM events
+--     GROUP BY 1,2

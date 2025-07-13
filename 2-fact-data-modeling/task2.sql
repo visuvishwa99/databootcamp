@@ -9,10 +9,12 @@ or you could have browser_type as a column with multiple rows for each user (eit
 drop table user_devices_cumulated;
 CREATE TABLE user_devices_cumulated (
     user_id TEXT,
-    browser_type TEXT,  -- e.g., 'Chrome', 'Firefox', etc.  
-    device_activity_datelist date[]  -- maps browser_type to array of dates
+    --browser_type TEXT, -- e.g., 'Chrome', 'Firefox', etc.  
+    device_activity_datelist date[],
+    current_user_date DATE,
+    PRIMARY KEY (user_id, current_user_date)  -- maps browser_type to array of dates
 );
 
--- drop table user_devices_cumulated;
 
 
+-- select count(1) from user_devices_cumulated;
