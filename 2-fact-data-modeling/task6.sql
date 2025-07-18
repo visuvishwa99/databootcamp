@@ -1,12 +1,6 @@
 /*
-A cumulative query to generate host_activity_datelist from events
+The incremental query to generate host_activity_datelist
 */
-
-
--- select min(DATE(event_time)),max(DATE(event_time)) from events;
--- 2023-01-01	2023-01-31
-
-
 
 insert into hosts_cumulated (user_id, host_activity_datelist, current_user_date)
 with yesterday as (
