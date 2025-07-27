@@ -18,12 +18,25 @@ services:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=password
       - AWS_REGION=us-east-1
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
     ports:
       - 8888:8888
       - 8080:8080
       - 10000:10000
       - 10001:10001
       - 4040-4042:4040-4042
+  db: # PostgreSQL service
+    image: postgres:13 # Using a common PostgreSQL image
+    container_name: postgres_db
+    networks:
+      iceberg_net: # Connect to the same network as Spark
+    environment:
+      POSTGRES_DB: postgres # Match POSTGRES_DB in actors_history_scd_job.py
+      POSTGRES_USER: postgres # Match POSTGRES_USER
+      POSTGRES_PASSWORD: postgres # Match POSTGRES_PASSWORD
+    ports:
+      - "5432:5432" # Expose PostgreSQL port
   rest:
     image: tabulario/iceberg-rest
     container_name: iceberg-rest

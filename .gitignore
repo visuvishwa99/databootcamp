@@ -1,0 +1,10 @@
+# Ignored files for a Python project
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.vscode/
+*.log
+*.sqlite3
+*.db
