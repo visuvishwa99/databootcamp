@@ -1,4 +1,5 @@
- CREATE TABLE users_growth_accounting (
+
+CREATE TABLE users_growth_accounting (
      user_id TEXT,
      first_active_date DATE,
      last_active_date DATE,
